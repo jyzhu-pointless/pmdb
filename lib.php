@@ -48,7 +48,7 @@ function generate_GO_table($GO){
     }
     $GO_tbl =
 "<table class='tbl' id='GO'>
-    <tr><th class='tbl_title' colspan='3'>Gene Ontology <a href='help.php#tfifo'>[? Help]</a></th></tr>
+    <tr><th class='tbl_title' colspan='3'>Gene Ontology <a href='help.php#GO'>[? Help]</a></th></tr>
     <tr><th class='tbl_header'>GO Term</th><th class='tbl_header'>GO Category</th><th class='tbl_header'>GO Description</th></tr>";
     foreach($GO_array as $r){
         $GO_tbl = $GO_tbl.
@@ -64,7 +64,7 @@ function generate_basic_table($row){
     $gene_alias = implode('; ', explode("\n", $row['gene_alias']));
     $basic_tbl =
 "<table class='tbl' id='basic'>
-    <tr><th class='tbl_title' colspan='4'>Basic Information <a href='help.php#tfifo'>[? Help]</a></th></tr>
+    <tr><th class='tbl_title' colspan='4'>Basic Information <a href='help.php#bifo'>[? Help]</a></th></tr>
     <tr><th class='tbl_header'>ID</th><td>{$row['ID']}</td><th class='tbl_header'>UniProt ID</th><td><a href='https://www.uniprot.org/uniprot/{$row['uniprot_id']}'>{$row['uniprot_id']}</a></td></tr>
     <tr><th class='tbl_header'>Protein Name</th><td colspan='3'>{$row['protein_name']}</td></tr>
     <tr><th class='tbl_header'>Protein Alias</th><td colspan='3'>{$protein_alias}</td></tr>
@@ -79,7 +79,7 @@ function generate_basic_table($row){
 function generate_seq_table($row){
     $seq_tbl =
 "<table class='tbl' id='seq'>
-    <tr><th class='tbl_title' colspan='4'>Protein Sequence <a href='help.php#tfifo'>[? Help]</a></th></tr>
+    <tr><th class='tbl_title' colspan='4'>Protein Sequence <a href='help.php#protseq'>[? Help]</a></th></tr>
     <tr><th class='tbl_header'>Protein Length</th><td>{$row['protein_length']}</td><th class='tbl_header'>Molecular Weight</th><td>{$row['protein_mass']}</td></tr>
     <tr><th class='tbl_header' id='dl'>Sequence <br> <a href='fasta/{$row['uniprot_id']}.fasta'>[Download FASTA]</a> </th><td colspan='3' class='sequence'>".sequence_print($row['sequence'])."</td></tr>
 </table>";
@@ -117,7 +117,7 @@ function generate_domain_svg($entry){
 function generate_domain_table($dom_arr){
     $domain_tbl =
 "<table class='tbl' id='dom'>
-    <tr><th class='tbl_title' colspan='6'>Position of MADS-box According to HMMER <a href='help.php#tfifo'>[? Help]</a></th></tr>";
+    <tr><th class='tbl_title' colspan='6'>Position of MADS-box According to HMMER <a href='help.php#posibox'>[? Help]</a></th></tr>";
     $domain_tbl = $domain_tbl."<tr><td class='dom_svg' colspan='6' align='center'>";
     foreach($dom_arr as $dom){
         $domain_tbl = $domain_tbl.$dom['svg'];
