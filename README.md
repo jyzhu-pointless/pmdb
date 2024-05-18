@@ -1,6 +1,6 @@
 # WARNING
 
-Missing HMMER data. This problem will *potentially* be fixed in the future.
+## Missing HMMER data. This problem will *potentially* be fixed in the future.
 
 # PMDB (PlantMADS Database)
 
